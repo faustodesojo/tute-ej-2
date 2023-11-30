@@ -6,21 +6,20 @@ import { AboutUs } from '../pages/about_us/about_us';
 import { Contacto } from '../pages/contacto/contacto';
 import { Catalogo } from '../pages/catalogo/catalogo';
 
+const Routes = () => {
+  return (
+    <BrowserRouter>
+      <HomeLayout>
+        <ReactDomRoutes>
+          <Route path="/" element={<Header />} />
+          <Route path="*" element={<Header />} />
+          <Route path="sobre-nosotros" element={<AboutUs />} />
+          <Route path="contacto" element={<Contacto />} />
+          <Route path="productos" element={<Catalogo />} />
+        </ReactDomRoutes>
+      </HomeLayout>
+    </BrowserRouter>
+  );
+};
 
-  const Routes = () => {
-      return (
-          <BrowserRouter>
-              <HomeLayout>
-                  <ReactDomRoutes>
-                      <Route path="/" element={<Header />} />
-                      <Route path="*" element={<Header />} />
-                      <Route path="sobre-nosotros" element={<AboutUs />} />
-                      <Route path="contacto" element={<Contacto />} />
-                      <Route path="productos" element={<Catalogo />} />
-                  </ReactDomRoutes>
-              </HomeLayout>
-          </BrowserRouter>
-      )
-  }
-
-  export default Routes;
+export { Routes };
